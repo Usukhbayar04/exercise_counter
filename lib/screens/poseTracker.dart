@@ -21,11 +21,11 @@ class _PoseTrackerPageState extends State<PoseTrackerPage> {
   final String API_KEY = "ade62024-02b7-4669-9bca-66116748ea80";
   final String POSETRACKER_API_URL =
       "https://posetracker.com/pose_tracker/tracking";
-  final String exercise = "squat";
+  final String exercise = "face_pushup";
   final String difficulty = "easy";
   final bool skeleton = true;
-  final int width = 350;
-  final int height = 350;
+  final int width = 450;
+  final int height = 450;
 
   // states
   String _displayText = "";
@@ -121,6 +121,12 @@ class _PoseTrackerPageState extends State<PoseTrackerPage> {
               flex: 3,
               child: WebViewWidget(controller: _webviewController),
             ),
+            // Text(
+            //   _displayText,
+            //   style: TextStyle(
+            //     fontSize: 12,
+            //   ),
+            // )
             // ===== Text Status =====
             // Expanded(
             //   flex: 2,

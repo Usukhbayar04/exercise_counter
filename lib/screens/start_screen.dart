@@ -11,13 +11,14 @@ class StartScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 189, 223, 243),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Image.asset(
             'assets/images/pull_up.jpg',
             fit: BoxFit.fitHeight,
             height: widthSize * 1.55,
           ),
-          const Spacer(),
+          // const Spacer(),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -26,11 +27,11 @@ class StartScreen extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
-                  fontSize: 26,
+                  fontSize: 24,
                 ),
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 20),
+              // const SizedBox(height: 20),
               const Text(
                 'There is no instans way to a healthy life',
                 style: TextStyle(
@@ -67,7 +68,7 @@ class StartScreen extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 50),
+          const SizedBox(height: 10),
         ],
       ),
     );

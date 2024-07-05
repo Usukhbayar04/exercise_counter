@@ -175,7 +175,7 @@ class HomeScreen extends StatelessWidget {
                   fontSize: 18,
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
