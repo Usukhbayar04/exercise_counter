@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pose_tracking/model/exercise.dart';
+import 'package:pose_tracking/screens/poseTracker.dart';
 
 class ExerciseScreen extends StatefulWidget {
   final Exercise exercise;
@@ -18,7 +19,7 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
     double height = MediaQuery.of(context).size.height * 0.85;
 
     List<String> words = widget.exercise.description!.split(' ');
-    bool showSeeAllButton = words.length > 10;
+    bool showSeeAllButton = words.length > 15;
 
     return Scaffold(
       backgroundColor: const Color.fromARGB(171, 132, 197, 235),
@@ -88,23 +89,23 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
                             Row(
                               children: [
                                 const Text(
-                                  '🏋️‍♂️ - ',
+                                  '🏋️‍♂️ -',
                                   style: TextStyle(
-                                    fontSize: 28,
+                                    fontSize: 26,
                                     color: Colors.white,
                                   ),
                                 ),
-                                SizedBox(width: width * 0.02),
+                                SizedBox(width: width * 0.01),
                                 Wrap(
                                   children: widget.exercise.musclesTargeted!
                                       .map((muscle) {
                                     return Padding(
                                       padding:
-                                          const EdgeInsets.only(right: 10.0),
+                                          const EdgeInsets.only(right: 8.0),
                                       child: Text(
                                         muscle,
                                         style: const TextStyle(
-                                          fontSize: 20,
+                                          fontSize: 18,
                                           fontWeight: FontWeight.w400,
                                           color: Colors.white,
                                           decoration: TextDecoration.underline,
@@ -120,21 +121,21 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
                             Row(
                               children: [
                                 const Text(
-                                  '📰 - ',
+                                  '📰 -',
                                   style: TextStyle(
                                     fontSize: 26,
                                     color: Colors.white,
                                   ),
                                 ),
-                                SizedBox(width: width * 0.02),
+                                SizedBox(width: width * 0.01),
                                 Expanded(
                                   child: Text(
                                     _showFullText
                                         ? widget.exercise.description!
-                                        : words.take(10).join(' ') +
+                                        : words.take(12).join(' ') +
                                             (showSeeAllButton ? '...' : ''),
                                     style: const TextStyle(
-                                      fontSize: 16,
+                                      fontSize: 18,
                                       fontWeight: FontWeight.w400,
                                       color: Colors.white,
                                     ),
@@ -142,18 +143,6 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
                                 ),
                               ],
                             ),
-                            if (showSeeAllButton && !_showFullText)
-                              TextButton(
-                                onPressed: () {
-                                  setState(() {
-                                    _showFullText = true;
-                                  });
-                                },
-                                child: const Text(
-                                  'See All',
-                                  style: TextStyle(color: Colors.amber),
-                                ),
-                              ),
                             SizedBox(height: height * 0.01),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -192,7 +181,15 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
                         SizedBox(
                           width: width * 0.9,
                           child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => PoseTrackerPage(
+                                      title: widget.exercise.name),
+                                ),
+                              );
+                            },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.white,
                             ),
@@ -213,6 +210,22 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
                 ),
               ),
             ),
+            if (showSeeAllButton && !_showFullText)
+              Positioned(
+                bottom: height * 0.16,
+                right: width * 0.04,
+                child: TextButton(
+                  onPressed: () {
+                    setState(() {
+                      _showFullText = true;
+                    });
+                  },
+                  child: const Text(
+                    'See All',
+                    style: TextStyle(color: Colors.amber),
+                  ),
+                ),
+              ),
           ],
         ),
       ),
