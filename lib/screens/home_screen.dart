@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
           "A side squat involves stepping out to the side and squatting down, targeting different leg muscles.",
       musclesTargeted: ["Quads", "Glutes", "Hamstrings", "Adductors"],
       difficulty: "Intermediate",
-      imageUrl: "assets/images/face_lunge.jpg",
+      imageUrl: "assets/images/face_squat.jpg",
     ),
     Exercise(
       id: 3,
@@ -29,7 +29,7 @@ class HomeScreen extends StatelessWidget {
           "A face lunge involves stepping forward into a lunge position, focusing on the forward-facing posture.",
       musclesTargeted: ["Quads", "Glutes", "Hamstrings"],
       difficulty: "Beginner",
-      imageUrl: "assets/images/face_lunge.jpg",
+      imageUrl: "assets/images/face_lunge.jpeg",
     ),
     Exercise(
       id: 4,
