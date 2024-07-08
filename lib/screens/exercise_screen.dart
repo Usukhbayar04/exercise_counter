@@ -23,16 +23,6 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
 
     return Scaffold(
       backgroundColor: const Color.fromARGB(171, 132, 197, 235),
-      // appBar: AppBar(
-      //   title: const Text(
-      //     'Exercise Screen',
-      //     style: TextStyle(
-      //       fontWeight: FontWeight.w500,
-      //     ),
-      //   ),
-      //   backgroundColor: const Color.fromARGB(176, 150, 197, 224),
-      //   foregroundColor: Colors.white,
-      // ),
       body: Center(
         child: Stack(
           children: [
@@ -41,6 +31,37 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
               width: width,
               height: height,
               fit: BoxFit.cover,
+            ),
+            Positioned(
+              top: height * 0.05,
+              left: width * 0.05,
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color.fromARGB(255, 48, 46, 46)
+                          .withOpacity(0.3),
+                      spreadRadius: 2,
+                      blurRadius: 10,
+                      offset: const Offset(0, 3),
+                    ),
+                  ],
+                ),
+                child: Material(
+                  color: Colors.transparent,
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: const Icon(
+                      Icons.arrow_back_ios,
+                      size: 30,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
             ),
             Align(
               alignment: Alignment.bottomCenter,
@@ -105,7 +126,7 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
                                       child: Text(
                                         muscle,
                                         style: const TextStyle(
-                                          fontSize: 18,
+                                          fontSize: 15,
                                           fontWeight: FontWeight.w400,
                                           color: Colors.white,
                                           decoration: TextDecoration.underline,
@@ -135,7 +156,7 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
                                         : words.take(12).join(' ') +
                                             (showSeeAllButton ? '...' : ''),
                                     style: const TextStyle(
-                                      fontSize: 18,
+                                      fontSize: 15,
                                       fontWeight: FontWeight.w400,
                                       color: Colors.white,
                                     ),
@@ -145,7 +166,7 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
                             ),
                             SizedBox(height: height * 0.01),
                             Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 for (String level in [
                                   'Beginner',
@@ -167,7 +188,7 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
                                     child: Text(
                                       level,
                                       style: const TextStyle(
-                                        fontSize: 16,
+                                        fontSize: 15,
                                         fontWeight: FontWeight.w400,
                                         color: Colors.white,
                                       ),
@@ -212,7 +233,7 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
             ),
             if (showSeeAllButton && !_showFullText)
               Positioned(
-                bottom: height * 0.16,
+                bottom: height * 0.169,
                 right: width * 0.04,
                 child: TextButton(
                   onPressed: () {

@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'package:flutter/material.dart'; // import 'dart:io';
 import 'package:webview_flutter/webview_flutter.dart'; // webview
 import 'package:webview_flutter_android/webview_flutter_android.dart'; // Import for Android features.
@@ -21,14 +22,14 @@ class _PoseTrackerPageState extends State<PoseTrackerPage> {
   final String API_KEY = "ade62024-02b7-4669-9bca-66116748ea80";
   final String POSETRACKER_API_URL =
       "https://posetracker.com/pose_tracker/tracking";
-  final String exercise = "face_pushup";
+  late String exercise;
   final String difficulty = "easy";
   final bool skeleton = true;
   final int width = 450;
   final int height = 450;
+  int _currentCount = 0;
 
   // states
-  String _displayText = "";
   String _api_url = "";
 
   // instances in use to configure js bridge and permissions
@@ -39,10 +40,11 @@ class _PoseTrackerPageState extends State<PoseTrackerPage> {
   void initState() {
     super.initState();
 
+    exercise = _convertToTitle(widget.title);
+
     // init url and text
     _api_url =
         "$POSETRACKER_API_URL?token=$API_KEY&exercise=$exercise&difficulty=$difficulty&skeleton=$skeleton&width=$width&height=$height";
-    _displayText = "Waiting for API Data...";
 
     // configure JS in webview depending on platform
     if (WebViewPlatform.instance is WebKitWebViewPlatform) {
@@ -76,14 +78,15 @@ class _PoseTrackerPageState extends State<PoseTrackerPage> {
     _webviewController.addJavaScriptChannel("flutterJsMessageBridge",
         onMessageReceived: (JavaScriptMessage javaScriptMessage) {
       setState(() {
-        _displayText = javaScriptMessage.message;
+        if (javaScriptMessage.message.isNotEmpty) {
+          var jsonData = jsonDecode(javaScriptMessage.message);
+          _currentCount = jsonData['current_count'] ?? 0;
+        }
       });
     });
     _webviewController.setNavigationDelegate(NavigationDelegate(
       onPageStarted: (String url) {
-        setState(() {
-          _displayText = "Waiting for API data...";
-        });
+        setState(() {});
       },
       onPageFinished: (String url) {
         setState(() {
@@ -100,85 +103,84 @@ class _PoseTrackerPageState extends State<PoseTrackerPage> {
 
     // request camera permision then start url
     Permission.camera.request().whenComplete(
-        () => _webviewController.loadRequest(Uri.parse(_api_url)));
+          () => _webviewController.loadRequest(
+            Uri.parse(_api_url),
+          ),
+        );
+  }
+
+  String _convertToTitle(String input) {
+    return input.toLowerCase().replaceAll(' ', '_');
   }
 
   @override
   Widget build(BuildContext context) {
-    print('DATA: $_displayText');
-
+    print(exercise);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
         foregroundColor: Colors.white,
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          children: [
-            // ===== Webview =====
-            Expanded(
-              flex: 3,
-              child: WebViewWidget(controller: _webviewController),
-            ),
-            // Text(
-            //   _displayText,
-            //   style: TextStyle(
-            //     fontSize: 12,
-            //   ),
-            // )
-            // ===== Text Status =====
-            // Expanded(
-            //   flex: 2,
-            //   child: Container(
-            //     padding: const EdgeInsets.all(5.0),
-            //     width: MediaQuery.of(context).size.width * 0.8,
-            //     child: Wrap(
-            //       children: [
-            //         Text("Data: ", style: widget.textMsgStyle),
-            //         Text(
-            //           _displayText,
-            //           style: widget.textMsgStyle,
-            //         ),
-            //       ],
-            //     ),
-            //   ),
-            // ),
-            // ===== Button area =====
-            // FloatingActionButton(
-            //   onPressed: () {
-            //     // reload page on press
-            //     setState(() {
-            //       _displayText = "Reloading ! ";
-            //     });
-            //     _webviewController.loadRequest(
-            //       Uri.parse(_api_url),
-            //     );
-            //   },
-            //   child: const Icon(Icons.refresh_outlined),
-            // ),
-            // ===== Button area =====
-            // Expanded(
-            //   flex: 0,
-            //   child: ElevatedButton(
-            //     style: ElevatedButton.styleFrom(textStyle: widget.textMsgStyle),
-            //     onPressed: () {
-            //       // reload page on press
-            //       setState(() {
-            //         _displayText = "Reloading ! ";
-            //       });
-            //       _webviewController.loadRequest(
-            //         Uri.parse(_api_url),
-            //       );
-            //     },
-            //     child: const Text(
-            //       "Refresh",
-            //       style: TextStyle(color: Colors.black),
-            //     ),
-            //   ),
-            // )
-          ],
+        title: Text(
+          widget.title,
+          style: const TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+          ),
         ),
+      ),
+      body: Stack(
+        fit: StackFit.expand,
+        children: [
+          // ===== Webview =====
+          WebViewWidget(controller: _webviewController),
+          // ===== Text Status =====
+          Positioned(
+            bottom: 20,
+            left: 0,
+            right: 0,
+            child: Container(
+              color: Colors.white,
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Text(
+                      'Count: $_currentCount',
+                      style: const TextStyle(
+                        fontSize: 32,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      textStyle: const TextStyle(
+                        color: Colors.black,
+                      ),
+                      backgroundColor: Colors.black,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        _currentCount = 0;
+                      });
+                      // _webviewController.loadRequest(
+                      //   Uri.parse(_api_url),
+                      // );
+                    },
+                    child: const Text(
+                      "Refresh",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(height: 20),
+        ],
       ),
     );
   }

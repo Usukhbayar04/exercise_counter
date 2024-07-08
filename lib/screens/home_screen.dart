@@ -130,7 +130,6 @@ class HomeScreen extends StatelessWidget {
                           fontSize: 18,
                         ),
                       ),
-                      SizedBox(height: 5),
                       Text(
                         'Usukhbayar Ganchuluun',
                         style: TextStyle(

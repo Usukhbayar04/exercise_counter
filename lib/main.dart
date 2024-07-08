@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         primaryColor: const Color(0xFF000000),
         secondaryHeaderColor: const Color(0xFF000000),
         useMaterial3: true,
-        scaffoldBackgroundColor: const Color.fromARGB(171, 132, 197, 235),
+        scaffoldBackgroundColor: const Color(0xFF36454F),
       ),
       debugShowCheckedModeBanner: false,
       home: const StartScreen(),
