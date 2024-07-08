@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
           "A face squat is a type of squat that focuses on maintaining a forward-facing posture.",
       musclesTargeted: ["Quads", "Glutes", "Hamstrings"],
       difficulty: "Beginner",
-      imageUrl: "assets/images/face_squat.jpg",
+      imageUrl: "assets/images/push_up.jpg",
     ),
     Exercise(
       id: 2,
@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
           "A side squat involves stepping out to the side and squatting down, targeting different leg muscles.",
       musclesTargeted: ["Quads", "Glutes", "Hamstrings", "Adductors"],
       difficulty: "Intermediate",
-      imageUrl: "assets/images/pull_up.jpg",
+      imageUrl: "assets/images/face_lunge.jpg",
     ),
     Exercise(
       id: 3,
@@ -29,7 +29,7 @@ class HomeScreen extends StatelessWidget {
           "A face lunge involves stepping forward into a lunge position, focusing on the forward-facing posture.",
       musclesTargeted: ["Quads", "Glutes", "Hamstrings"],
       difficulty: "Beginner",
-      imageUrl: "assets/images/push_up.jpg",
+      imageUrl: "assets/images/face_lunge.jpg",
     ),
     Exercise(
       id: 4,
@@ -38,7 +38,7 @@ class HomeScreen extends StatelessWidget {
           "A side lunge involves stepping out to the side and lunging down, targeting different leg muscles.",
       musclesTargeted: ["Quads", "Glutes", "Hamstrings", "Adductors"],
       difficulty: "Intermediate",
-      imageUrl: "assets/images/pull_up.jpg",
+      imageUrl: "assets/images/side_lunge.jpg",
     ),
     Exercise(
       id: 5,
@@ -47,7 +47,7 @@ class HomeScreen extends StatelessWidget {
           "A face plank is a plank exercise where the body is held in a push-up position with the face looking forward.",
       musclesTargeted: ["Core", "Shoulders", "Back"],
       difficulty: "Beginner",
-      imageUrl: "assets/images/squat.jpg",
+      imageUrl: "assets/images/face_plank.jpg",
     ),
     Exercise(
       id: 6,
@@ -56,20 +56,20 @@ class HomeScreen extends StatelessWidget {
           "A side plank is a plank exercise where the body is supported on one arm, facing sideways.",
       musclesTargeted: ["Core", "Obliques", "Shoulders"],
       difficulty: "Intermediate",
-      imageUrl: "assets/images/pull_up.jpg",
+      imageUrl: "assets/images/side_plank.jpg",
     ),
     Exercise(
       id: 7,
-      name: "Face Push Up",
+      name: "Face Pushup",
       description:
           "A face push-up is a push-up exercise where the body is raised and lowered using the arms, maintaining a forward-facing posture.",
       musclesTargeted: ["Chest", "Triceps", "Shoulders"],
       difficulty: "Intermediate",
-      imageUrl: "assets/images/face_pushup.jpg",
+      imageUrl: "assets/images/push_up.jpg",
     ),
     Exercise(
       id: 8,
-      name: "Side Push Up",
+      name: "Side Pushup",
       description:
           "A side push-up involves positioning the body sideways and performing push-up movements, targeting different muscles.",
       musclesTargeted: ["Chest", "Triceps", "Shoulders", "Obliques"],
@@ -83,7 +83,7 @@ class HomeScreen extends StatelessWidget {
           "A balance leg left exercise involves balancing on the left leg while performing various movements.",
       musclesTargeted: ["Legs", "Core", "Balance"],
       difficulty: "Intermediate",
-      imageUrl: "assets/images/face_squat.jpg",
+      imageUrl: "assets/images/balance_leg_left.jpg",
     ),
     Exercise(
       id: 10,
@@ -92,7 +92,7 @@ class HomeScreen extends StatelessWidget {
           "A balance leg right exercise involves balancing on the right leg while performing various movements.",
       musclesTargeted: ["Legs", "Core", "Balance"],
       difficulty: "Intermediate",
-      imageUrl: "assets/images/balance_leg_right.jpg",
+      imageUrl: "assets/images/balance_leg_left.jpg",
     ),
     Exercise(
       id: 11,
@@ -101,7 +101,7 @@ class HomeScreen extends StatelessWidget {
           "A face swing involves swinging the body or a weight forward and backward while maintaining a forward-facing posture.",
       musclesTargeted: ["Legs", "Core", "Shoulders"],
       difficulty: "Intermediate",
-      imageUrl: "assets/images/side_squat.jpg",
+      imageUrl: "assets/images/face_pushup.jpg",
     ),
   ];
 
