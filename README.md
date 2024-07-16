@@ -48,10 +48,13 @@ Include some screenshots or a demo gif of your app in action.
    ```bash
    git clone https://github.com/Usukhbayar04/exercise_counter.git
 2. Navigate to the project directory:
+   ```
    cd your-repo-name
 3. Install dependencies:
+   ```
    flutter pub get
 4. Run the app:
+   ```
    flutter run
    
 ### Usage
