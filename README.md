@@ -12,6 +12,10 @@ I created a mobile app that counts the number of exercises done. The app utilize
 
 ## Screenshots
 Include some screenshots or a demo gif of your app in action.
+![Screenshot 1](https://github.com/Usukhbayar04/pose_tracking/blob/main/assets/sc1.jpg)
+![Screenshot 2](https://github.com/Usukhbayar04/pose_tracking/blob/main/assets/sc1.jpg)
+![Screenshot 3](https://github.com/Usukhbayar04/pose_tracking/blob/main/assets/sc1.jpg)
+![Screenshot 4](https://github.com/Usukhbayar04/pose_tracking/blob/main/assets/sc1.jpg)
 
 ## Technologies Used
 
