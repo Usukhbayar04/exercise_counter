@@ -12,10 +12,19 @@ I created a mobile app that counts the number of exercises done. The app utilize
 
 ## Screenshots
 Include some screenshots or a demo gif of your app in action.
-![Screenshot 1](https://github.com/Usukhbayar04/pose_tracking/blob/main/assets/sc1.jpg)
-![Screenshot 2](https://github.com/Usukhbayar04/pose_tracking/blob/main/assets/sc1.jpg)
-![Screenshot 3](https://github.com/Usukhbayar04/pose_tracking/blob/main/assets/sc1.jpg)
-![Screenshot 4](https://github.com/Usukhbayar04/pose_tracking/blob/main/assets/sc1.jpg)
+## Screenshots
+Include some screenshots or a demo gif of your app in action.
+
+<table>
+  <tr>
+    <td><img src="https://github.com/Usukhbayar04/pose_tracking/blob/main/assets/sc1.jpg" alt="Screenshot 1" width="300"/></td>
+    <td><img src="https://github.com/Usukhbayar04/pose_tracking/blob/main/assets/sc2.jpg" alt="Screenshot 2" width="300"/></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/Usukhbayar04/pose_tracking/blob/main/assets/sc3.jpg" alt="Screenshot 3" width="300"/></td>
+    <td><img src="https://github.com/Usukhbayar04/pose_tracking/blob/main/assets/sc4.jpg" alt="Screenshot 4" width="300"/></td>
+  </tr>
+</table>
 
 ## Technologies Used
 
