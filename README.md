@@ -18,7 +18,7 @@ Include some screenshots or a demo gif of your app in action.
 <table>
   <tr>
     <td><img src="https://github.com/Usukhbayar04/pose_tracking/blob/main/assets/sc4.jpg" alt="Screenshot 1" width="300"/></td>
-    <td><img src="https://github.com/Usukhbayar04/pose_tracking/blob/main/assets/sc4.jpg" alt="Screenshot 2" width="300"/></td>
+    <td><img src="https://github.com/Usukhbayar04/pose_tracking/blob/main/assets/sc1.jpg" alt="Screenshot 2" width="300"/></td>
   </tr>
   <tr>
     <td><img src="https://github.com/Usukhbayar04/pose_tracking/blob/main/assets/sc2.jpg" alt="Screenshot 3" width="300"/></td>
