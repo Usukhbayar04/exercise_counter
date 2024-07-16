@@ -17,12 +17,12 @@ Include some screenshots or a demo gif of your app in action.
 
 <table>
   <tr>
-    <td><img src="https://github.com/Usukhbayar04/pose_tracking/blob/main/assets/sc4.jpg" alt="Screenshot 1" width="300"/></td>
-    <td><img src="https://github.com/Usukhbayar04/pose_tracking/blob/main/assets/sc1.jpg" alt="Screenshot 2" width="300"/></td>
+    <td><img src="https://github.com/Usukhbayar04/exercise_counter/blob/main/assets/sc4.jpg" alt="Screenshot 1" width="300"/></td>
+    <td><img src="https://github.com/Usukhbayar04/exercise_counter/blob/main/assets/sc1.jpg" alt="Screenshot 2" width="300"/></td>
   </tr>
   <tr>
-    <td><img src="https://github.com/Usukhbayar04/pose_tracking/blob/main/assets/sc2.jpg" alt="Screenshot 3" width="300"/></td>
-    <td><img src="https://github.com/Usukhbayar04/pose_tracking/blob/main/assets/sc3.jpg" alt="Screenshot 4" width="300"/></td>
+    <td><img src="https://github.com/Usukhbayar04/exercise_counter/blob/main/assets/sc2.jpg" alt="Screenshot 3" width="300"/></td>
+    <td><img src="https://github.com/Usukhbayar04/exercise_counter/blob/main/assets/sc3.jpg" alt="Screenshot 4" width="300"/></td>
   </tr>
 </table>
 
@@ -46,7 +46,7 @@ Include some screenshots or a demo gif of your app in action.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
+   git clone https://github.com/Usukhbayar04/exercise_counter.git
 2. Navigate to the project directory:
    cd your-repo-name
 3. Install dependencies:
