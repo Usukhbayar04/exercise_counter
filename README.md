@@ -10,6 +10,9 @@ I created a mobile app that counts the number of exercises done. The app utilize
 - Real-time feedback on exercise correctness
 - Detailed exercise history
 
+## Screenshots
+Include some screenshots or a demo gif of your app in action.
+
 ## Technologies Used
 
 - **PoseTracker API**: Used for pose estimation and exercise tracking.
@@ -38,18 +41,15 @@ I created a mobile app that counts the number of exercises done. The app utilize
 4. Run the app:
    flutter run
    
-Usage
+### Usage
 1. Open the app on your device.
 2. Grant the necessary permissions for camera access.
 3. Select the exercise you want to perform.
 4. Start exercising and get real-time feedback and counting.
-   
-Screenshots
-Include some screenshots or a demo gif of your app in action.
 
-Contributing
+## Contributing
 If you want to contribute to this project, please fork the repository and use a feature branch. Pull requests are warmly welcome.
 
-License
+## License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
