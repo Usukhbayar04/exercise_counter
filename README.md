@@ -56,7 +56,6 @@ Include some screenshots or a demo gif of your app in action.
 4. Run the app:
    ```
    flutter run
-   
 ### Usage
 1. Open the app on your device.
 2. Grant the necessary permissions for camera access.
